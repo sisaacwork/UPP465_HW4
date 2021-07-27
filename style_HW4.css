@@ -84,7 +84,7 @@
 	clear: none;
 }
 
-.map {
+#map {
 	display: block;
 	text-align: center;
 	background: rgba(0, 0, 0, .5);
@@ -101,9 +101,4 @@
 	min-height: 100%;
 	z-index:  -1;
 }
-
-#mapid { 
-	height: 180px; 
-}
-
 
