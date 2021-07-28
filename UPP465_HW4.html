@@ -5,34 +5,33 @@
 
 <title>UPP 465 Homework 4 - Isaac Work</title>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
-
-<link rel = "stylesheet" href = "style_HW4.css">
-
+<link rel="stylesheet" href="style_HW4.css"> 
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@500&family=Raleway:wght@300&family=STIX+Two+Math&family=Zen+Loop&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
-<script>
-	var map = L.map('map').setView([0,0],1);
-</script>
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+ <script src="js/leaflet-providers.js"></script>
 
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin="">
-	</script>
-<script src = "js/leaflet-providers.js">
-	</script>
 
 </head>
 
-
 <body>
 
+<div class="bg"></div>
+<div class="lightning flashit"></div>
+
+<br><br><br>
 
 <div class = "title">
 	<br>
@@ -43,283 +42,219 @@
 	<p style = "text-align:center">Chicago, USA to Puerto Nariño, Colombia
 </div>
 
-<br>
-<br>
+<br><br><br>
 
-<hr size="4" width="95%" color="black">
 <div class = "subtitle">
-	<p style = "text-align:justify">This December, after completing my MPA degree, my fiancée Katherine and I will be embarking on a 10-day adventure to the Amazon rainforest. Both of us will be fulfilling a lifelong dream of visiting the Earth's lungs and spending time in a secluded indigenous village. Puerto Nariño, the village we will be based out of for the week, is considered the most ecologically friendly human settlement in South America; internal combustion engines are banned, 95% of refuse is recycled, and the community is totally self-sufficient. Following a week in the Amazon, we'll be spending two days in Colombia's capital, Bogotá, ascending to its crown peak on Monserrate and exploring one of Latin America's most vibrant cities.</p>
-	<p style = "text-align:justify">Below is our trip's itinerary, maps of our routes and accomodations, links to descriptions of some places we are staying, and an assortment of photos of the areas we will be.</p>
+	<p style = "text-align:justify">This page is a recreation of an <a href = "https://sisaacwork.github.io/UPP465_HW3/UPP465_HW3.html"> earlier repository</a> using Leaflet.js documentation and JavaScript background animation. The trip map previously presented in an interactive ArcGIS Online format was re-programmed into Leaflet.js syntax. The new map is zoomed in on the trip's focal point: Puerto Nariño. The areas surrounding Puerto Nariño - including abutting lands in Peru - are some of South America's largest protected indigenous reserves. Each contacted indigenous village in the area is outlined with a black polygon. Our route into Puerto Nariño and accommodation while there is in blue. The red circle surrounding the area represents the 10km zone around Puerto Nariño that the Colombian government considers to be safe, meaning it's free of drug traffickers, paramilitary domestic terror groups, and illegal mining operations. If you zoom out, you'll see larger purple polygons that represent the estimated extent of uncontacted tribes' lands.</p>
+	
 	<br>
-	<p style = "text-align:justify">Este diciembre, después de completar mi título de maestría en administración pública, mi novia Katherine y yo nos embarcaremos en una aventura de 10 días en la selva amazónica. Ambos cumpliremos el sueño de toda la vida de visitar los pulmones de la Tierra y pasar tiempo en una aldea indígena aislada. Puerto Nariño, el pueblo en el que nos basaremos durante la semana, es considerado el asentamiento humano más ecológico de América del Sur; Los motores de combustión interna están prohibidos, el 95% de la basura se recicla y la comunidad es autosuficiente. Después de una semana, pasaremos dos días en la capital de Colombia, Bogotá, ascendiendo a la cima de Monserrate y explorando una de las ciudades más vibrantes de América Latina.</p>
-	<p style = "text-align:justify">En esta página se encuentra nuestro itinerario, mapas de las rutas y alojamientos, enlaces a descripciones de los lugares en los que nos alojaremos y una variedad de fotos de las áreas en las que estaremos.</p>
+
+	<p style = "text-align:justify">Este sitio web es una reproducción de un <a href = "https://sisaacwork.github.io/UPP465_HW3/UPP465_HW3.html">repositorio anterior</a> que utiliza Leaflet.js y animación JavaScript. El mapa de viaje presentado anteriormente desde el formato de ArcGIS Online se reprogramó en la sintaxis Leaflet.js. El nuevo mapa se amplía en el punto focal del viaje: Puerto Nariño. Las áreas alrededor de Puerto Nariño, incluidas las tierras cercanas en Perú, son algunas de las reservas indígenas protegidas más grandes de América del Sur. Cada aldea indígena conocida en el área está delineada con un polígono negro. Nuestra ruta a Puerto Nariño y alojamiento mientras estemos allí es en azul. El círculo rojo que rodea el área representa la zona de 10 km alrededor de Puerto Nariño que el gobierno colombiano considera segura, lo que significa que está libre de narcos, grupos terroristas domésticos paramilitares y operaciones mineras ilegales. Si se aleja, verá polígonos púrpuras más grandes que representan la extensión estimada de las tierras de las tribus aisladas.</p>
 </div>
 
-<br>
-<br>
+<br><br><br>
 
-<video autoplay muted loop id="amazonvideo">
-	<source src="pictures/amazondrone.mp4" type="video/mp4">
-</video>
-
-<br>
-<br>
-<br>
 <hr size="4" width="95%" color="black">
-<br>
-<br>
 
-<div class = "english">
-	<h1 style = "margin-left:100px">The Trip</h1>
-	<hr size="2" width="90%" color="black">
-	<br>
-	<h3>December 14th</h3>
-	<p>1) Depart Chicago at 7:45.</p>
-	<p>2) Layover in Panama City from 14:03-15:26.</p>
-	<p>3) Arrive in Bogotá at 17:07.</p>
-	<p>4) Stay overnight in <a href = "https://www.airbnb.com/rooms/1500015?source_impression_id=p3_1626987353_z2QYL2DCe%2FhM8Mk%2F&guests=1&adults=1">Usaquén, Bogotá.</a></p>
+<br><br><br>
+
+<div class = "title">
+	<h3 style = "text-align:center">PUERTO NARIÑO AREA MAP</h3>
 </div>
 
-<div class = "spanish">
-	<h1 style = "margin-right: 100px">El Viaje</h1>
-	<hr size="2" width="90%" color="black">
-	<br>
-	<h3>14 de diciembre</h3>
-	<p>1) Salida de Chicago a las 7:45.</p>
-	<p>2) Escala en Ciudad de Panamá de 14:03 a 15:26.</p>
-	<p>3) Llegada a Bogotá a las 17:07.</p>
-	<p>4) Pasar la noche en el barrio<a href = "https://www.airbnb.com/rooms/1500015?source_impression_id=p3_1626987353_z2QYL2DCe%2FhM8Mk%2F&guests=1&adults=1"> Usaquén de Bogotá.</a></p>
-</div>
-
-<br>
 <br>
 
 <div id = "map">
-<script>
-	var mymap = L.map('mapid').setView([24.75, -79.62], 2);
-	var CyclOSM = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
+</div>
+
+<script> 
+var map = L.map('map').setView([-3.815, -70.367], 10);
+
+var CyclOSM = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
 	maxZoom: 20,
 	attribution: '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+var circle = L.circle([-3.774, -70.375],{
+	color: 'light grey',
+  fillColor: '#f03',
+  fillOpacity: 0.25,
+  radius: 10000,
+}).addTo(map).bindPopup("10km Safety Zone");
+
+var marker = L.marker([-3.774, -70.375]).addTo(map).bindPopup("Cabañas Alto del Aguila" + '<br>' + "Hosted by Fraile Alfredo");
+
+var polygon = L.polygon([
+    [-3.779, -70.370],
+    [-3.785, -70.363],
+    [-3.781, -70.359],
+    [-3.775, -70.367],
+], {
+  color: 'black', 
+  fillColor: 'green',
+  fillOpacity: .25,
+}).addTo(map).bindPopup("Puerto Nariño" + '<br>' + "Pop. 5,900");
+
+var polygon = L.polygon([
+    [-3.760, -70.404],
+    [-3.761, -70.401],
+    [-3.763, -70.398],
+    [-3.765, -70.395],
+    [-3.768, -70.390],
+    [-3.765, -70.389],
+    [-3.762, -70.393],
+    [-3.757, -70.402]
+], {
+  color: 'black', 
+  fillColor: 'green',
+  fillOpacity: .25,
+}).addTo(map).bindPopup("San Francisco" + '<br>' + "Pop. 324");
+
+var polygon = L.polygon([
+    [-3.774, -70.307],
+    [-3.775, -70.304],
+    [-3.776, -70.303],
+    [-3.778, -70.304],
+    [-3.779, -70.300],
+    [-3.778, -70.300],
+    [-3.777, -70.302],
+    [-3.776, -70.302],
+    [-3.776, -70.299],
+    [-3.774, -70.300],
+    [-3.772, -70.302],
+    [-3.774, -70.303],
+    [-3.773, -70.306]
+], {
+  color: 'black', 
+  fillColor: 'green',
+  fillOpacity: .25,
+}).addTo(map).bindPopup("San Martin de Amacayacu" + '<br>' + "Pop. 450");
+
+var polygon = L.polygon([
+    [-2.135, -71.733],
+	[-1.755, -71.422],
+	[-1.159, -71.456],
+	[-0.578, -72.182],
+	[-1.087, -72.686],
+	[-1.839, -73.197],
+	[-2.459, -72.784]
+], {
+  color: 'transparent', 
+  fillColor: 'purple',
+  fillOpacity: .33,
+}).addTo(map).bindPopup("Uncontacted Tribe Area");
+
+var polygon = L.polygon([
+    [-5.344, -71.795],
+    [-4.796, -71.586],
+    [-4.339, -71.256],
+    [-4.252, -70.772],
+    [-4.575, -70.169],
+    [-5.029, -69.649],
+    [-5.662, -69.975],
+    [-6.175, -71.014]
+], {
+  color: 'transparent', 
+  fillColor: 'purple',
+  fillOpacity: .33,
+}).addTo(map).bindPopup("Uncontacted Tribe Area");
+
+var polygon = L.polygon([
+    [-3.712, -71.083],
+    [-3.455, -71.329],
+    [-3.221, -71.302],
+    [-3.072, -71.102],
+    [-3.064, -70.878],
+    [-3.372, -70.915]
+], {
+  color: 'transparent', 
+  fillColor: 'purple',
+  fillOpacity: .33,
+}).addTo(map).bindPopup("Uncontacted Tribe Area");
+
+var polyline = L.polyline([
+    [41.981, -87.905],
+    [26.708, -81.427],
+    [25.494, -81.160],
+    [23.619, -81.014],
+    [21.893, -80.968],
+    [19.304, -80.948],
+    [14.223, -81.433],
+    [12.344, -81.378],
+    [11.173, -81.275],
+    [10.059, -80.671],
+    [9.273, -80.025],
+    [9.037, -79.737],
+    [8.991, -79.577],
+    [8.993, -79.452],
+    [9.018, -79.401],
+    [9.065, -79.386],
+    [8.984, -79.409],
+    [8.925, -79.408],
+    [8.833, -79.372],
+    [8.595, -79.213],
+    [8.043, -78.502],
+    [7.415, -77.409],
+    [6.812, -76.636],
+    [5.777, -75.641],
+    [5.137, -74.993],
+    [4.889, -74.598],
+    [4.822, -74.354],
+    [4.767, -74.237],
+    [4.723, -74.175],
+    [4.697, -74.141],
+    [4.735, -74.206],
+    [4.751, -74.279],
+    [4.748, -74.324],
+    [4.718, -74.364],
+    [4.661, -74.371],
+    [4.553, -74.333],
+    [4.371, -74.251],
+    [3.752, -73.761],
+    [2.513, -72.231],
+    [1.562, -71.599],
+    [1.060, -71.191],
+    [0.334, -70.896],
+    [-0.388, -70.429],
+    [-1.799, -70.110],
+    [-2.678, -69.992],
+    [-4.196, -69.942],
+    [-4.217, -69.950],
+    [-4.184, -69.983],
+    [-4.122, -70.038],
+    [-4.069, -70.074],
+    [-4.031, -70.131],
+    [-3.939, -70.178],
+    [-3.919, -70.228],
+    [-3.826, -70.275],
+    [-3.794, -70.359],
+    [-3.785, -70.364],
+    [-3.774, -70.374]
+]).addTo(map).bindPopup("Route from Chicago to Puerto Nariño");
+
+
 </script>
 </div>
 
-<br>
-<br>
-
-<div class = "english">
-	<h3>December 15th</h3>
-	<p>1) Depart Bogotá at 12:42.</p>
-	<p>2) Arrive in Leticia at 14:26.</p>
-	<p>3) Stay overnight in the <a href = "https://www.tripadvisor.com/Hotel_Review-g317037-d7383389-Reviews-Leticias_Guest_House-Leticia_Amazonas_Department.html">Leticias Guest House.</a></p>
-</div>
-
-<div class = "spanish">
-	<h3>15 de diciembre</h3>
-	<p>1) Salida de Bogotá a las 12:42.</p>
-	<p>2) Llegada a Leticia a las 14:26.</p>
-	<p>3) Pasar la noche en <a href = "https://www.tripadvisor.com/Hotel_Review-g317037-d7383389-Reviews-Leticias_Guest_House-Leticia_Amazonas_Department.html">la casa de huéspedes de Leticia.</a></p>
-</div>
-
-<br>
-<br>
-<br>
-<hr size="4" width="95%" color="black">
-<br>
-<br>
-
-<div class = "english">
-	<h3> December 16th</h3>
-	<p>1) Depart Leticia at 7:00.</p>
-	<p>2) Arrive in Puerto Nariño at 9:00.</p>
-	<p>3) Hike to <a href = "https://www.tripadvisor.com/Hotel_Review-g1732625-d3176368-Reviews-Hostal_Alto_del_Aguila-Puerto_Narino_Amazonas_Department.html">Friar Alfredo's hostel.</a></p>
-	<p>4) Set out to the docks to meet with local guides.</p>
-</div>
-
-<div class = "spanish">
-	<h3> 16 de diciembre</h3>
-	<p>1) Salida de Leticia a las 7:00.</p>
-	<p>2) Llegada a Puerto Nariño a las 9:00.</p>
-	<p>3) Caminar a <a href = "https://www.tripadvisor.com/Hotel_Review-g1732625-d3176368-Reviews-Hostal_Alto_del_Aguila-Puerto_Narino_Amazonas_Department.html">hostel alto del aguila de fraile Alfredo.</a></p>
-	<p>4) Ir a los muelles para contratar guías indígenas.</p>
-</div>
-
-<br>
-<br>
-
-<div class = "map">
-	<small><a href="//univofillinois.maps.arcgis.com/apps/Embed/index.html?webmap=98d80eb356274f788c55d59465755dbc&extent=-70.9618,-4.4294,-69.4457,-3.5745&zoom=true&scale=true&legend=true&disable_scroll=true&theme=dark" style="color:#0000FF;text-align:left" target="_blank">View larger map</a></small><br><iframe width="1250" height="600" frameborder="5" scrolling="no" marginheight="2" marginwidth="2" title="Aventura en el Departamento de Amazonas Colombia" src="//univofillinois.maps.arcgis.com/apps/Embed/index.html?webmap=98d80eb356274f788c55d59465755dbc&extent=-70.9618,-4.4294,-69.4457,-3.5745&zoom=true&previewImage=true&scale=true&legend=true&disable_scroll=true&theme=dark"></iframe>
-</div>
-
-<br>
-<br>
-
-<div class = "english">
-	<h3>December 17th - 21st</h3>
-	<p>- Stay in Puerto Nariño</p>
-	<p>- Kayak to <a href = "https://www.lonelyplanet.com/colombia/puerto-narino/attractions/lago-tarapoto/a/poi-sig/1327214/1317864">Lake Tarapoto</a>, home of the pink dolphins</p>
-	<p>- Hike into the rainforest for a night of hammock camping</p>
-	<p>among the wildlife</p>
-	<p>- Fish for piranha</p>
-	<p>- Hike to <a href = "https://www.hachettebookgroup.com/travel/outdoors/explore-the-amazon-visit-the-ticuna-settlement-of-san-martin/">San Martin de Amacayacu</a>, an indigenous village</p>
-	<p>12km from the hostel</p>
-</div>
-
-<div class = "spanish">
-	<h3>17 al 21 de diciembre</h3>
-	<p>- Estancia en Puerto Nariño</p>
-	<p>- Kayak al <a href = "https://www.lonelyplanet.com/colombia/puerto-narino/attractions/lago-tarapoto/a/poi-sig/1327214/1317864">lago tarapoto</a>, hogar de los delfines rosados</p>
-	<p>- Camine por la selva para pasar una noche durmiendo</p>
-	<p>en unahamaca con la vida silvestre</p>
-	<p>- Pescar de pirañas</p>
-	<p>- Caminata a <a href = "https://www.hachettebookgroup.com/travel/outdoors/explore-the-amazon-visit-the-ticuna-settlement-of-san-martin/">San Martín de Amacayacu</a>, un pueblo de</p> 
-	<p>indígena Ticuna a 12 km de distancia</p>
-</div>
-
-
-<br>
-<br>
-<br>
-<hr size="4" width="95%" color="black">
-<br>
-<br>
-
-<div class = "english">
-	<h3>December 22nd - 24th</h3>
-	<p>- <a href = "https://www.airbnb.com/rooms/42049912?source_impression_id=p3_1626997771_wxIKKdi7LdafP2bQ&guests=1&adults=1">Stay in Bogotá</a></p>
-	<p>- Climb <a href = "https://en.wikipedia.org/wiki/Monserrate">Monserrate</a> (3,152m)</p>
-	<p>- Shop the Bogotá <a href = "https://theculturetrip.com/south-america/colombia/articles/everything-you-need-to-know-about-buying-emeralds-in-colombia/">raw emerald market</a></p>
-</div>
-
-<div class = "spanish">
-	<h3>22 al 24 de diciembre</h3>
-	<p>- <a href = "https://www.airbnb.com/rooms/42049912?source_impression_id=p3_1626997771_wxIKKdi7LdafP2bQ&guests=1&adults=1">Quedarse en Bogotá</a></p>
-	<p>- Escalar <a href = "https://en.wikipedia.org/wiki/Monserrate">monserrate</a> (3.152 metros)</p>
-	<p>- Compra en el <a href = "https://theculturetrip.com/south-america/colombia/articles/everything-you-need-to-know-about-buying-emeralds-in-colombia/">mercado de esmeraldas crudas</a> en Bogotá</p>
-</div>
-
-<br>
-<br>
-
-<div class = "map">
-	<small><a href="//univofillinois.maps.arcgis.com/apps/Embed/index.html?webmap=98d80eb356274f788c55d59465755dbc&extent=-74.2733,4.5296,-73.8943,4.7432&zoom=true&scale=true&legend=true&disable_scroll=true&theme=dark" style="color:#0000FF;text-align:left" target="_blank">View larger map</a></small><br><iframe width="1250" height="600" frameborder="5" scrolling="no" marginheight="2" marginwidth="2" title="Aventura en el Departamento de Amazonas Colombia" src="//univofillinois.maps.arcgis.com/apps/Embed/index.html?webmap=98d80eb356274f788c55d59465755dbc&extent=-74.2733,4.5296,-73.8943,4.7432&zoom=true&previewImage=true&scale=true&legend=true&disable_scroll=true&theme=dark"></iframe>
-</div>
-
-<br>
-<br>
-
-<div class = "english">
-	<h3>December 24th</h3>
-	<p>1) Leave Bogotá at 12:08.</p>
-	<p>2) Layover in Panama City from 14:05 to 18:43.</p>
-	<p>3) Arrive in Chicago at 23:15.</p>
-</div>
-
-<div class = "spanish">
-	<h3>24 de diciembre</h3>
-	<p>1) Desde de Bogotá a las 12:08.</p>
-	<p>2) Escala en Ciudad de Panamá de 14:05 a 18:43.</p>
-	<p>3) Llegada a Chicago a las 23:15.</p>
-</div>
-
-<br>
-<br>
-
-<br>
-<br>
-<br>
-<hr size="4" width="95%" color="black">
-<br>
-<br>
-
-<div class = "title">
-	<h1 style = "text-align:center">FULL TRIP MAP</h1>
-</div>
-
-<br>
-
-<div class = "map">
-	<small><a href="//univofillinois.maps.arcgis.com/apps/Embed/index.html?webmap=98d80eb356274f788c55d59465755dbc&extent=-170.4921,-34.9841,23.5704,58.385&zoom=true&scale=true&legendlayers=true&basemap_gallery=true&disable_scroll=true&theme=dark" style="color:#0000FF;text-align:left" target="_blank">View larger map</a></small><br><iframe width="1250" height="600" frameborder="5" scrolling="no" marginheight="2" marginwidth="2" title="Aventura en el Departamento de Amazonas Colombia" src="//univofillinois.maps.arcgis.com/apps/Embed/index.html?webmap=98d80eb356274f788c55d59465755dbc&extent=-170.4921,-34.9841,23.5704,58.385&zoom=true&previewImage=true&scale=true&legendlayers=true&basemap_gallery=true&disable_scroll=true&theme=dark"></iframe>
-</div>
-
-<br>
-<br>
-<br>
-<hr size="4" width="95%" color="black">
-<br>
-<br>
-
-<div class = "title">
-	<h1 style = "text-align:center">PICTURES</h1>
-</div>
-
-<br>
-
-<div class = "centerimg">
-	<p><img src="https://cf.bstatic.com/images/hotel/max1024x768/101/101937576.jpg"></p>
-	<p style = "text-align:center">Leticias Guest House, Leticia</p>
-</div>
-
-<br>
-<br>
-<br>
-
-<div class = "centerimg">
-	<p><img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/305300291.jpg?k=86919a7e8c030d5263baee04f8f4889cd2f3c217c5d19a035c743022ef8198d4&o=&hp=1"></p>
-	<p style = "text-align:center">Hostel Alto del Aguila, Puerto Nariño</p>
-</div>
-
-<br>
-<br>
-<br>
-
-<div class = "centerimg">
-	<p><img src="https://colombiaextraordinaria.com/somos_colombia/uploads/fincas/imgPrincipal/imagen_118551633.jpg"></p>
-	<p style = "text-align:center">Jumping pink dolphin in Lake Tarapoto</p>
-</div>
-
-<br>
-<br>
-<br>
-
-<div class = "centerimg">
-	<p><img src="https://lh3.googleusercontent.com/proxy/eEFr2lRI1QVLsVFBmBpN8xoiRNf7mGaVhPP9qfgt408y_HBg_L1sb4xnOQTVZy2vw8Sr0LyeUhqg-zMFQrkBaL0RXsx_0ti8nELzKNxerV5rwpsrBNGUTxzoxEQv9XDrYPhqMk0O5LbWRNwIdyAONm_iLO4uc7T7s_So3XYVcVm-XNVWJknaomK0lydDIrsgT-KOcL2GiIx5tHxoyd4"></p>
-	<p style = "text-align:center">San Martin de Amacayacu, a small village of Ticuna people</p>
-</div>
-
-<br>
-<br>
-<br>
-
-<div class = "centerimg">
-	<p><img src="https://www.las2orillas.co/wp-content/uploads/2017/06/puertona.jpg"></p>
-	<p style = "text-align:center">Puerto Nariño, the most ecologically friendly village in South America</p>
-</div>
-
-<br>
-<br>
-<br>
-
-<div class = "centerimg">
-	<p><img src="https://www.freetworoam.com/wp-content/uploads/2019/10/IMG_0972.jpg"></p>
-	<p style = "text-align:center">View from the summit of Monserrate in Bogotá</p>
-</div>
-
-<br>
-<br>
-<br>
-<hr size="4" width="95%" color="black">
-<br>
+<br><br><br><br>
 
 <div class = "notes">
 	<h3 style = "text-align:center">NOTES</h3>
 	<p style = "text-align:center">Created by S. Isaac Work for</p>
-	<p style = "text-align:center">UPP465 - Web GIS - Homework 3</p>
+	<p style = "text-align:center">UPP465 - Web GIS - Homework 4</p>
 	<br>
-	<p style = "text-align:center">22 July 2021</p>
+	<p style = "text-align:center">27 July 2021</p>
 </div>
 
 
-</body>
 
+
+
+
+
+
+
+
+
+</body>
 </html>
